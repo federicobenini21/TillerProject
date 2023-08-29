@@ -10,4 +10,4 @@ SELECT
     ,id_waiter
     ,id_device
 FROM `TillerProject.order_data`
-WHERE m_cached_payed > 0 AND m_cached_price > 0
+WHERE m_cached_payed >= 0 AND m_cached_price >= 0
