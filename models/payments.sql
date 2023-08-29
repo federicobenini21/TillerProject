@@ -1,7 +1,7 @@
 SELECT
     id_pay
     ,id_order
-    ,date_created
+    ,p.date_created AS payment_date
     ,m_amount AS payment_amount
     ,dim_type AS payment_type
-FROM `TillerProject.payment_data`
+FROM `TillerProject.payment_data` p
