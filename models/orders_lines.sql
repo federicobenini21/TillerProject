@@ -1,8 +1,8 @@
 SELECT
     id_order_line
     ,id_order
-    ,date_opended AS date_opened
-    ,date_created
+    ,date_opended AS lines_open_date
+    ,ol.date_created AS lines_creation_date
     ,m_quantity AS qty
     ,m_unit_price AS unit_price
     ,m_unit_price_exc_vat AS unit_price_exc_vat
@@ -13,4 +13,4 @@ SELECT
     ,dim_type AS line_type
     ,dim_category AS line_category
     ,dim_name AS line_name
-FROM `TillerProject.order_line`
+FROM `TillerProject.order_line` ol
