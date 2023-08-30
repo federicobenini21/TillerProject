@@ -14,3 +14,4 @@ SELECT
     ,dim_category AS line_category
     ,dim_name AS line_name
 FROM `TillerProject.order_line` ol
+LEFT JOIN {{ref("orders")}} o USING (id_order)
