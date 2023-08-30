@@ -5,4 +5,4 @@ SELECT
     ,m_amount AS payment_amount
     ,dim_type AS payment_type
 FROM `TillerProject.payment_data` p
-LEFT JOIN {{ref("orders")}} o USING (id_order)
+RIGHT JOIN {{ref("orders")}} o USING (id_order)
