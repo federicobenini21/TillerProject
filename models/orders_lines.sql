@@ -1,6 +1,12 @@
 WITH  for_cleaned_category AS (
     SELECT id_order,
         CASE 
+            WHEN dim_name IN ("50 CL BLONDE METEOR","1,5 L BLONDE METEOR","50 CL BLANCHE METEOR","50 CL BLONDE TIGRE BOCK 50 CL","1.5L BLONDE TIGRE BOCK","1,5 L BLANCHE METEOR","25 CL BLONDE METEOR","50 CL BLANCHE 1664","1.5L BIERE BLANCHE 1664","25 CL BLANCHE METEOR","GALLIA IPA") THEN "Bières"
+            WHEN dim_name IN ("75cl Gris de Gris","75cl CHARDONNAY","Finca Don Gerardo Guatemala","75cl GARANCE","75cl SAUVIGNON","14cl CHARDONNAY") THEN "Vins"
+            WHEN dim_name IN ("GUATEMALA - PLAN DEL GUAYABO - Jalapa","COLOMBIE - LA ESPERANZA","CHITUL TIROL - COBAN","GUATEMALA - PULCAL - ANTIGUA","ETHIOPIE - YIRGACHEFFE - MOKA","GUATEMALA- CHITUL TIROL - COBAN") THEN "Cafés"
+            WHEN dim_name IN ("Breizh Cola","Lemonaid Citron Vert") THEN "Softs"
+            WHEN dim_name IN ("SPRITZ","alcool","SUPERIEURE","APPIE BRUT") THEN "Spiritueux"
+            WHEN dim_name IN ("Cheeseburger Les Entretiens") THEN "Plats principaux"
             WHEN dim_category IN ("ENTREES","ENTREES FORMULE","Entrées spécialités tandoor","Entrees","Entrées","Apéritifs","AVOCADO TOAST","ENTÉES","APERITIFS","SALLE / APERITIFS","APÉRITIFS","Spécialités Tibétaines Entrée","Entrée Tibétaines","NOS APERITIFS","ENVIES SALÉES","Entrées  Tandoori","Mix entrée sagarmatha","Planches","EPICERIE","PETITE ÉPICERIE","ENTREES EMP","Grignotages","Planche","Soft Epicerie","Pain","BAR / APERITIF","PLANCHES","Pains","CHARCUTERIE","APERITIVO","PATISSERIES") THEN "Apérifs"
             WHEN dim_category IN ("Boissons chaudes","BAR / BOISSONS CHAUDES","BOISSONS CHAUDES","SALLE / BOISSONS CHAUDES","Chaud","AE BOISSONS CHAUDES","CAFE, THE & CHOCOLAT","NOS BOISSONS CHAUDES") THEN "Autres boissons chaudes"
             WHEN dim_category IN ("PRESSION","CIDRES","CIDRES/BIÈRES","BIERES","Bière Epicerie","Bières","SALLE / BIERES","BIÈRES","BIERES BOUTEILLES","Bieres","HAPPY HOUR","BIERES PRESSIONS","BIERES PRESSION","BIERE BIO","NOS BIERES","BIERES & CIDRES BOUTEILLES","CIDRE APPIE","BAR / BIERES","BEERS") THEN "Bières"
