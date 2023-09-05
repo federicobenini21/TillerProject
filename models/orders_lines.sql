@@ -45,6 +45,7 @@ SELECT
     ,dim_category AS line_category
     ,dim_name AS line_name
     ,cleaned_category
+    ,id_store
 FROM `TillerProject.order_line` ol
 RIGHT JOIN {{ref("orders")}} o USING (id_order)
 LEFT JOIN for_cleaned_category USING (id_order)
